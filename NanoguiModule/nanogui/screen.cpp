@@ -50,7 +50,7 @@ void Screen::drawWidgets()
    ci::gl::ScopedVao scopedVao (nullptr);
    ci::gl::ScopedTextureBind text2 (GL_TEXTURE_2D, 0);
    ci::gl::ScopedTextureBind text3(GL_TEXTURE_3D, 0);
-   ci::gl::ScopedDepth depth(false, false);  // FIXME causes GL errors
+   ci::gl::ScopedDepth depth(false);  // FIXME causes GL errors
 
    nvgEndFrame (mNVGContext);
 }
@@ -70,8 +70,8 @@ bool Screen::cursorPosCallbackEvent (double x, double y)
          // No cursor support in Cinder?????
          //if (widget != nullptr && widget->cursor() != mCursor)
          //{
-         //	mCursor = widget->cursor();
-         //	//glfwSetCursor(mGLFWWindow, mCursors[(int)mCursor]);
+         // mCursor = widget->cursor();
+         // //glfwSetCursor(mGLFWWindow, mCursors[(int)mCursor]);
          //}
       }
       else
